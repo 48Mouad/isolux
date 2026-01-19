@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iso-Lux | Menuiserie Extérieure de Qualité</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Polices et lissage */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Effet de transition fluide */
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation d'apparition */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero Overlay */
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Cartes Services */
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 smooth-scroll">
+
+    <!-- En-tête / Navigation -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="bg-blue-600 text-white p-2 rounded-lg group-hover:bg-blue-700 transition">
+                        <i class="fa-solid fa-house-chimney text-2xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800 tracking-tight">ISO<span class="text-blue-600">-LUX</span></span>
+                </a>
+
+                <!-- Navigation Bureau -->
+                <nav class="hidden md:flex space-x-8 font-medium">
+                    <a href="#accueil" class="hover:text-blue-600 transition">Accueil</a>
+                    <a href="#produits" class="hover:text-blue-600 transition">Nos Produits</a>
+                    <a href="#about" class="hover:text-blue-600 transition">À Propos</a>
+                    <a href="#realisations" class="hover:text-blue-600 transition">Réalisations</a>
+                    <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+                </nav>
+
+                <!-- Bouton Devis -->
+                <div class="hidden md:block">
+                    <a href="#contact" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-semibold transition shadow-lg transform hover:scale-105">
+                        <i class="fa-solid fa-file-signature mr-2"></i>Devis Gratuit
+                    </a>
+                </div>
+
+                <!-- Menu Mobile Hamburger -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600 text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="flex flex-col p-4 space-y-3">
+                <a href="#accueil" class="block py-2 text-gray-600 hover:text-blue-600 font-medium">Accueil</a>
+                <a href="#produits" class="block py-2 text-gray-600 hover:text-blue-600 font-medium">Nos Produits</a>
+                <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600 font-medium">À Propos</a>
+                <a href="#realisations" class="block py-2 text-gray-600 hover:text-blue-600 font-medium">Réalisations</a>
+                <a href="#contact" class="block py-2 text-blue-600 font-bold">Demander un Devis</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Héros -->
+    <section id="accueil" class="hero-bg relative h-[85vh] flex items-center justify-center">
+        <!-- Overlay Sombre -->
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 text-center text-white">
+            <span class="inline-block bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold mb-4 tracking-wider uppercase fade-in-up">Depuis 2010</span>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight fade-in-up" style="animation-delay: 0.1s;">
+                L'Excellence en <br/> <span class="text-orange-400">Menuiserie Extérieure</span>
+            </h1>
+            <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-gray-200 fade-in-up" style="animation-delay: 0.2s;">
+                Spécialiste en châssis, portes, vérandas et protections solaires dans la province du Luxembourg. Transformez votre habitat avec Iso-Lux.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in-up" style="animation-delay: 0.3s;">
+                <a href="#produits" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-bold text-lg transition border-2 border-transparent">
+                    Nos Solutions
+                </a>
+                <a href="#contact" class="bg-transparent hover:bg-white hover:text-gray-900 text-white px-8 py-3 rounded-lg font-bold text-lg transition border-2 border-white">
+                    Contactez-nous
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Barre d'infos rapides -->
+    <div class="bg-blue-900 text-white py-6">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-around items-center gap-4 text-center">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-medal text-orange-400 text-2xl"></i>
+                <div class="text-left">
+                    <p class="font-bold">14 Ans d'Expérience</p>
+                    <p class="text-sm text-blue-200">Qualité certifiée</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-users text-orange-400 text-2xl"></i>
+                <div class="text-left">
+                    <p class="font-bold">Service Sur-Mesure</p>
+                    <p class="text-sm text-blue-200">Conseil personnalisé</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-headset text-orange-400 text-2xl"></i>
+                <div class="text-left">
+                    <p class="font-bold">Devis Gratuit</p>
+                    <p class="text-sm text-blue-200">Réponse rapide</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Produits -->
+    <section id="produits" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nos Produits & Services</h2>
+                <div class="w-20 h-1 bg-orange-500 mx-auto rounded"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Découvrez notre large gamme de solutions pour l'amélioration de votre habitat, alliant esthétique, isolation et sécurité.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Produit 1 -->
+                <div class="service-card bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1503708928676-1cb796a0891e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Châssis" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-0 left-0 bg-blue-600 text-white px-4 py-1 text-sm font-semibold rounded-tr-lg">Best-Seller</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fa-solid fa-table-cells text-orange-500 text-xl"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Châssis PVC & ALU</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Des châssis performants offrant une isolation thermique et acoustique optimale. Large choix de couleurs.</p>
+                        <a href="#contact" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-2">En savoir plus <i class="fa-solid fa-arrow-right text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Produit 2 -->
+                <div class="service-card bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519643381401-22c77e60520e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Portes d'entrée" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fa-solid fa-door-open text-orange-500 text-xl"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Portes d'Entrée</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Sécurité et élégance. Nos portes d'entrée accueillent vos invités tout en protégeant votre foyer.</p>
+                        <a href="#contact" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-2">En savoir plus <i class="fa-solid fa-arrow-right text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Produit 3 -->
+                <div class="service-card bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1623157879673-abc806b74452?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Portes de Garage" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fa-solid fa-warehouse text-orange-500 text-xl"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Portes de Garage</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Motorisées, sectionnelles ou basculantes. Praticité et robustesse pour votre garage.</p>
+                        <a href="#contact" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-2">En savoir plus <i class="fa-solid fa-arrow-right text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Produit 4 -->
+                <div class="service-card bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1599619351208-3e6c839d6828?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Vérandas" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fa-solid fa-sun text-orange-500 text-xl"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Vérandas & Pergolas</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Agrandissez votre espace de vie avec une véranda lumineuse ou profitez de votre terrasse avec une pergola.</p>
+                        <a href="#contact" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-2">En savoir plus <i class="fa-solid fa-arrow-right text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Produit 5 -->
+                <div class="service-card bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1510344421118-47206129188e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Volets" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fa-solid fa-blinds text-orange-500 text-xl"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Volets & Stores</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Protection solaire, intimité et sécurité renforcée avec nos gammes de volets roulants et battants.</p>
+                        <a href="#contact" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-2">En savoir plus <i class="fa-solid fa-arrow-right text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Produit 6 -->
+                <div class="service-card bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Extensions" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fa-solid fa-home text-orange-500 text-xl"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Extensions</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Besoin de plus d'espace ? Nous réalisons vos extensions de maison avec des matériaux durables.</p>
+                        <a href="#contact" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-2">En savoir plus <i class="fa-solid fa-arrow-right text-sm"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À Propos -->
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1581094794329-cd56b5095bb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Équipe au travail" class="rounded-lg shadow-xl">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h4 class="text-orange-500 font-bold uppercase tracking-wide mb-2">Qui sommes-nous ?</h4>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Iso-Lux : Votre Partenaire de Confiance</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Implantée dans la province du Luxembourg, la société <strong>Iso-Lux</strong> cumule une expérience significative depuis sa fondation en 2010. Nous nous distinguons dans le domaine de la menuiserie extérieure par notre engagement envers la qualité et la satisfaction client.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Que ce soit pour une nouvelle construction ou une rénovation, notre équipe d'experts vous accompagne de la conception à la pose. Nous sélectionnons les meilleurs fournisseurs pour vous garantir des produits durables, esthétiques et performants énergétiquement.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check-circle text-green-500"></i>
+                            <span>Personnel qualifié et expérimenté</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check-circle text-green-500"></i>
+                            <span>Matériaux haut de gamme (PVC, Alu, Bois)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check-circle text-green-500"></i>
+                            <span>Service après-vente réactif</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Bandeau -->
+    <section class="py-16 bg-blue-600 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <i class="fa-solid fa-helmet-safety absolute -top-10 -left-10 text-9xl text-white transform -rotate-12"></i>
+        </div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl font-bold text-white mb-4">Un projet en tête ?</h2>
+            <p class="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">N'hésitez pas à nous contacter pour une étude gratuite de votre projet. Nos conseillers se déplacent chez vous.</p>
+            <a href="#contact" class="inline-block bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1">
+                Demander mon devis gratuit
+            </a>
+        </div>
+    </section>
+
+    <!-- Section Réalisations (Mini Galerie) -->
+    <section id="realisations" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800">Dernières Réalisations</h2>
+                <div class="w-20 h-1 bg-orange-500 mx-auto rounded mt-4"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="overflow-hidden rounded-lg h-64">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Réalisation 1" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-lg h-64">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Réalisation 2" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-lg h-64">
+                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfe1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Réalisation 3" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-lg h-64">
+                    <img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Réalisation 4" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                
+                <!-- Informations -->
+                <div class="bg-blue-900 text-white p-10 md:w-2/5 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Contactez-nous</h3>
+                        <p class="text-blue-200 mb-8">Remplissez le formulaire et notre équipe vous répondra dans les 24 heures.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-blue-800 p-3 rounded-lg">
+                                    <i class="fa-solid fa-phone text-orange-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-blue-300">Téléphone</p>
+                                    <p class="font-semibold">+32 494 25 71 75</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="bg-blue-800 p-3 rounded-lg">
+                                    <i class="fa-solid fa-envelope text-orange-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-blue-300">Email</p>
+                                    <p class="font-semibold">info@iso-lux.be</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="bg-blue-800 p-3 rounded-lg">
+                                    <i class="fa-solid fa-location-dot text-orange-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-blue-300">Adresse</p>
+                                    <p class="font-semibold">Rue de l'Ermitage 12<br>6820 Muno, Belgique</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12">
+                        <p class="text-sm text-blue-300 mb-2">Suivez-nous</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="hover:text-orange-400 transition"><i class="fa-brands fa-facebook text-xl"></i></a>
+                            <a href="#" class="hover:text-orange-400 transition"><i class="fa-brands fa-instagram text-xl"></i></a>
+                            <a href="#" class="hover:text-orange-400 transition"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulaire -->
+                <div class="p-10 md:w-3/5">
+                    <form id="quote-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                                <input type="text" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" placeholder="Jean Dupont" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                                <input type="tel" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" placeholder="+32 ..." required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" placeholder="jean@exemple.com" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Service souhaité</label>
+                            <select class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                                <option>Châssis (PVC/ALU)</option>
+                                <option>Porte de garage</option>
+                                <option>Véranda / Extension</option>
+                                <option>Volets / Protections solaires</option>
+                                <option>Autre</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Votre message</label>
+                            <textarea rows="4" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" placeholder="Décrivez votre projet..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-lg shadow-md transition transform hover:scale-[1.02]">
+                            Envoyer ma demande
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-10 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <span class="text-2xl font-bold text-white tracking-tight">ISO<span class="text-blue-500">-LUX</span></span>
+                    <p class="mt-2 text-sm">Votre expert en menuiserie extérieure depuis 2010.</p>
+                </div>
+                
+                <div class="flex gap-6 text-sm">
+                    <a href="#" class="hover:text-white transition">Mentions légales</a>
+                    <a href="#" class="hover:text-white transition">Confidentialité</a>
+                    <a href="#" class="hover:text-white transition">Cookies</a>
+                </div>
+
+                <div class="text-sm text-center md:text-right">
+                    <p>&copy; 2024 Iso-Lux. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Gestion du menu mobile
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Fermer le menu au clic sur un lien
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Animation simple du formulaire
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const originalText = btn.innerText;
+            
+            btn.innerText = 'Envoyé avec succès !';
+            btn.classList.remove('bg-orange-500', 'hover:bg-orange-600');
+            btn.classList.add('bg-green-500', 'hover:bg-green-600');
+            
+            setTimeout(() => {
+                this.reset();
+                btn.innerText = originalText;
+                btn.classList.add('bg-orange-500', 'hover:bg-orange-600');
+                btn.classList.remove('bg-green-500', 'hover:bg-green-600');
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
